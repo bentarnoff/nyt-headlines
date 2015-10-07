@@ -1,4 +1,4 @@
-import os, requests, json
+import os, requests, json, sys
 
 #nobody can be told what the matrix is...
 def intro():
@@ -11,7 +11,7 @@ def intro():
 		switch = raw_input("Sound good? y/n ")
 		if switch.lower() == "n":
 			print "Bummer."
-			quit()
+			sys.exit()
 		elif switch.lower() == "y":
 			break
 		else:
@@ -46,7 +46,7 @@ def menu():
 		section_num = raw_input(">> ")
 		if int(section_num) == 0:
 			print "Goodbye!"
-			quit();
+			sys.exit();
 		elif int(section_num) > 17:
 			print "That's not a section. Try again."
 			continue
@@ -70,7 +70,7 @@ def get_stories(section):
 		if choice == "1":
 			menu()
 		elif choice == "0":
-			quit()
+			sys.exit()
 		else:
 			print "Sorry, I didn't get that."
 			continue
